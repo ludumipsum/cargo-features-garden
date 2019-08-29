@@ -1,0 +1,9 @@
+[package]
+name = "lib-b"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+# Note; No features specified. That means this crate won't compile.
+lib-a = { path = "../1_lib-a" }

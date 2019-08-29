@@ -1,0 +1,9 @@
+[package]
+name = "exe-a"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+lib-b = { path = "../2_lib-b" }
+lib-c = { path = "../2_lib-c" }

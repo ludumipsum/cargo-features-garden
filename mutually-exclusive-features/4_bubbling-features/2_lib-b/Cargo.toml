@@ -1,0 +1,43 @@
+[package]
+name = "lib-b"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[features]
+f-a = ["lib-a-fa"]
+f-b = ["lib-a-fb"]
+f-c = ["lib-a-fc"]
+
+[dependencies]
+# lib-a = { path = "../1_lib-a", features = ["f-a"] }
+# lib-a = { path = "../1_lib-a", features = ["f-b"] }
+# lib-a = { path = "../1_lib-a", features = ["f-c"] }
+
+# Two problems with the abbove; first,
+# > Cannot redefine existing key 'dependencies.lib-a'. [Toml Parser]
+# second -- even if you could redefine `lib-a` -- how would you select which
+# of the three entries to pick?
+
+# Possible solution, rename the dependency.
+
+[dependencies.lib-a-fa]
+    package = "lib-a"
+    path = "../1_lib-a"
+    optional = true
+    features = ["f-a"]
+
+[dependencies.lib-a-fb]
+    package = "lib-a"
+    path = "../1_lib-a"
+    optional = true
+    features = ["f-b"]
+
+[dependencies.lib-a-fc]
+    package = "lib-a"
+    path = "../1_lib-a"
+    optional = true
+    features = ["f-c"]
+
+# To actually use lib-a, there's some more boilerplate that needs to be handled.
+# See 2_lib-bb/src/lib.rs for details.

@@ -1,0 +1,8 @@
+[package]
+name = "lib-c"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+lib-a = { path = "../1_lib-a", features = ["memmap"] }

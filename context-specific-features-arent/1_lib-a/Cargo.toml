@@ -1,0 +1,15 @@
+[package]
+name = "lib-a"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[features]
+target_macos = []
+target_wasm = []
+target_windows = []
+profile_dev = []
+profile_build = []
+impossible_feature = []
+
+[dependencies]

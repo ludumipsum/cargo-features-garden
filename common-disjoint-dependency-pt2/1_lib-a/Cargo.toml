@@ -1,0 +1,12 @@
+[package]
+name = "lib-a"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[features]
+default = ["std"]
+std = []
+incompatible = []
+
+[dependencies]

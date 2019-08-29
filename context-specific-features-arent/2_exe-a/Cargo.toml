@@ -1,0 +1,26 @@
+[package]
+name = "exe-a"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+lib-a = { path = "../1_lib-a" }
+
+[target.x86_64-apple-darwin.dependencies]
+lib-a = { path = "../1_lib-a", features = ["target_macos"] }
+
+[target.wasm32-unknown-unknown.dependencies]
+lib-a = { path = "../1_lib-a", features = ["target_wasm"] }
+
+[target.x86_64-pc-windows-msvc.dependencies]
+lib-a = { path = "../1_lib-a", features = ["target_windows"] }
+
+[dev-dependencies]
+lib-a = { path = "../1_lib-a", features = ["profile_dev"] }
+
+[build-dependencies]
+lib-a = { path = "../1_lib-a", features = ["profile_build"] }
+
+[target.'cfg(false)'.dependencies]
+lib-a = { path = "../1_lib-a", features = ["impossible_feature"] }

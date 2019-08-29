@@ -1,0 +1,12 @@
+[package]
+name = "lib-d"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+lib-b = { path = "../2_lib-b" }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+lib-c = { path = "../2_lib-c" }
+

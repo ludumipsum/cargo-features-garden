@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "1_lib-a",
+    "2_exe-a",
+    "2_exe-b",
+    "2_exe-c",
+    "2_exe-d",
+]
