@@ -3,7 +3,7 @@
 ### Setup
 This is a direct followup to [Common Disjoint Dependencies Part 1][]. If you're not familiar with the story so far, please take a look at that crate.
 
-[Common Disjoint Dependencies Part 1]: ../common-disjoint-dependency/
+[Common Disjoint Dependencies Part 1]: ../common-disjoint-dependency.pt1/
 
 #### Modeling the Active-Negative
 

@@ -51,4 +51,4 @@ The Rust `std` library is the only opt-out dependency in the Rust ecosystem. The
 
 Let's keep things concrete and continue this discussion in [Common Disjoint Dependencies Part 2][].
 
-[Common Disjoint Dependencies Part 2]: ../common-disjoint-dependency-pt2/
+[Common Disjoint Dependencies Part 2]: ../common-disjoint-dependency.pt2/

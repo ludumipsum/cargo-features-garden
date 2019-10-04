@@ -27,7 +27,7 @@ An exploration of union'd feature flags focusing on deeply nested, target-specif
 An exploration of possible methods to encode mutually exclusive features into crates.
 
 [Context Specific Features Aren't]: context-specific-features-arent/
-[Common Disjoint Dependency]: common-disjoint-dependency/
+[Common Disjoint Dependency]: common-disjoint-dependency.pt1/
 [Target Specific Diamond]: target-specific-diamond/
 [Mutually Exclusive Features]: mutually-exclusive-features/
 
