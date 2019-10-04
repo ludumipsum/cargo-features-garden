@@ -1,3 +1,6 @@
+#[cfg(feature = "throw_compile_error")]
+compile_error!("This feature should never be set");
+
 #[cfg(feature = "target_macos")]
 compile_error!("The feature \"target_macos\" is set");
 
@@ -12,9 +15,6 @@ compile_error!("The feature \"profile_dev\" is set");
 
 #[cfg(feature = "profile_build")]
 compile_error!("The feature \"profile_build\" is set");
-
-#[cfg(feature = "impossible_feature")]
-compile_error!("This feature should never set");
 
 #[cfg(test)]
 mod tests {

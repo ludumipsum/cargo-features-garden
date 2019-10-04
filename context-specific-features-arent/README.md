@@ -6,7 +6,21 @@ Nothing in this workspace is intended to compile. Rather, the compilation errors
 
 `lib-a` has a number of `compile_error!` clauses [conditionally compiled][lib-a_src] based on `#[cfg(feature = "...")]` expressions.
 
-`exe-a` ["conditionally" enables][exe-a_src] those features based on the profile (Dev vs Release), target (Unix, Windows, WASM), and `[target.'cfg(..)'.dependency]` expressions.
+For example, this will only compile if the `"throw_compile_error"` feature is set;
+
+```rust
+#[cfg(feature = "throw_compile_error")]
+compile_error!("This feature should never be set");
+```
+
+`exe-a` ["conditionally" enables][exe-a_src] those features with `[target.<expression>.dependency]` sections, the `[dev-dependencies]` section, and the `[build-dependencies]` section.
+
+For example, this suggests we will include `lib-a` with the `"throw_compile_error"` feature set if `cfg(false)` resolves to `true` (so, in otherwords, never);
+
+```toml
+[target.'cfg(false)'.dependencies]
+lib-a = { path = "../1_lib-a", features = ["throw_compile_error"] }
+```
 
 [lib-a_src]: 1_lib-a/src/lib.rs#L1-L17
 [exe-a_src]: 2_exe-a/Cargo.toml#L10-L26

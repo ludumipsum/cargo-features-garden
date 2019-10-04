@@ -7,6 +7,9 @@ edition = "2018"
 [dependencies]
 lib-a = { path = "../1_lib-a" }
 
+[target.'cfg(false)'.dependencies]
+lib-a = { path = "../1_lib-a", features = ["throw_compile_error"] }
+
 [target.x86_64-apple-darwin.dependencies]
 lib-a = { path = "../1_lib-a", features = ["target_macos"] }
 
@@ -21,6 +24,3 @@ lib-a = { path = "../1_lib-a", features = ["profile_dev"] }
 
 [build-dependencies]
 lib-a = { path = "../1_lib-a", features = ["profile_build"] }
-
-[target.'cfg(false)'.dependencies]
-lib-a = { path = "../1_lib-a", features = ["impossible_feature"] }
