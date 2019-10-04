@@ -1,0 +1,10 @@
+[package]
+name = "exe-a"
+version = "0.1.0"
+authors = ["Drew Pirrone-Brusse <drew.pirrone.brusse@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lib-d = { path = "../3_lib-d", features = ["native"] }
